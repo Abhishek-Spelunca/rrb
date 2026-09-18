@@ -1,66 +1,97 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NTPC GK Hub — RRB NTPC General Awareness</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="top">
-  <div class="logo">🚆 <b>NTPC GK Hub</b></div>
-  <nav><a href="#home">Home</a><a href="#topics">Topics</a><a href="#practice">Practice</a><a href="#revision">Revision</a></nav>
-  <button class="mode" onclick="toggleMode()">☾</button>
+<title>NTPC — General Awareness</title><link rel="stylesheet" href="style.css">
+</head><body>
+<div class="cursor"></div><div class="grain"></div>
+<header class="nav">
+  <a class="wordmark" href="#top">NTPC<span>•</span>GK</a>
+  <div class="navlinks"><a href="#constitution">Constitution</a><a href="#static">Static GK</a><a href="#science">Science</a><a href="#practice">Practice</a></div>
+  <button class="menu" onclick="toggleMenu()">MENU <i></i></button>
 </header>
+<div class="mobileMenu" id="mobileMenu"><a href="#constitution" onclick="toggleMenu()">Constitution</a><a href="#static" onclick="toggleMenu()">Static GK</a><a href="#science" onclick="toggleMenu()">Science</a><a href="#practice" onclick="toggleMenu()">Practice</a></div>
 
-<main id="home">
+<main id="top">
 <section class="hero">
-  <div>
-    <div class="pill">RRB NTPC • GENERAL AWARENESS</div>
-    <h1>Learn GK.<br><em>Remember it.</em><br>Crack the question.</h1>
-    <p>Visual, exam-focused notes and questions for Constitution, Static GK, History, Geography, Economy, Science and Railway GK.</p>
-    <div class="heroBtns"><button onclick="go('topics')">Explore Topics →</button><button class="outline" onclick="startQuiz()">Start 10 Questions</button></div>
-  </div>
-  <div class="daily">
-    <div class="small">TODAY'S REVISION</div>
-    <div class="factIcon">🇮🇳</div>
-    <h3>Article 32</h3>
-    <p>Right to Constitutional Remedies</p>
-    <div class="tag">HIGH-YIELD</div>
-  </div>
+  <div class="heroMeta"><span>RRB NTPC</span><span>GENERAL AWARENESS</span><span>2026</span></div>
+  <div class="heroTitle"><p class="kicker">STUDY DIFFERENTLY</p><h1>Know it.<br><em>See it.</em><br>Remember it.</h1></div>
+  <div class="heroBottom"><p>A visual learning space for the facts, concepts and questions that matter in RRB NTPC General Awareness.</p><a class="circleBtn" href="#constitution">↓</a></div>
+  <div class="orb orb1"></div><div class="orb orb2"></div>
 </section>
 
-<section class="wrap stats">
- <div><b id="qDone">0</b><span>Questions attempted</span></div>
- <div><b id="accuracy">—</b><span>Accuracy</span></div>
- <div><b>12</b><span>Core GK areas</span></div>
- <div><b>🔥 1</b><span>Day streak</span></div>
+<section class="intro reveal">
+ <div class="label">01 / THE IDEA</div>
+ <div class="bigCopy">Most GK disappears<br>the moment you close<br>the book.</div>
+ <div class="sideCopy">So this isn't a textbook. It turns high-yield information into visual cards, memory hooks and questions you can actually recall.</div>
 </section>
 
-<section class="wrap" id="topics">
-  <div class="sectionHead"><div><div class="eyebrow">LEARN</div><h2>High-Yield GK</h2></div><input id="search" oninput="filterTopics()" placeholder="Search topics..."></div>
-  <div class="topicGrid" id="topicGrid"></div>
+<section class="statement">
+ <div class="statementWord">LEARN</div><div class="statementWord offset">REMEMBER</div><div class="statementWord">PRACTICE</div>
 </section>
 
-<section class="feature wrap">
- <div class="featureText"><div class="eyebrow">MEMORY ZONE</div><h2>Facts that stick.</h2><p>Study compact cards, memory hooks and exam-style questions instead of scrolling through walls of text.</p><button onclick="showMemory()">Show me a memory card</button></div>
- <div id="memoryCard" class="memoryCard"><span>🧠 MEMORY CARD</span><h3>42nd Amendment</h3><p>Often called the <b>“Mini Constitution”</b>.</p><small>Tip: Think “42 = many major changes”.</small></div>
+<section class="chapter dark reveal" id="constitution">
+ <div class="chapterTop"><span>02 / CONSTITUTION</span><span>INDIAN POLITY</span></div>
+ <div class="chapterTitle"><h2>The<br><em>Constitution.</em></h2><p>Not 395 articles at once. Just the ones you need to know — connected, visual and exam-ready.</p></div>
+ <div class="articleRail">
+  <article class="articleCard featured"><span>ARTICLE 14</span><strong>Equality</strong><small>Equality before law & equal protection of laws.</small></article>
+  <article class="articleCard"><span>ARTICLE 19</span><strong>Freedom</strong><small>Six key freedoms for citizens.</small></article>
+  <article class="articleCard"><span>ARTICLE 21</span><strong>Life</strong><small>Life and personal liberty.</small></article>
+  <article class="articleCard"><span>ARTICLE 32</span><strong>Remedies</strong><small>Right to Constitutional Remedies.</small></article>
+ </div>
+ <div class="memoryStrip"><span>MEMORY HOOK</span><b>14 → Equality &nbsp; / &nbsp; 19 → Freedom &nbsp; / &nbsp; 21 → Life &nbsp; / &nbsp; 32 → Remedies</b></div>
 </section>
 
-<section class="wrap" id="practice">
- <div class="sectionHead"><div><div class="eyebrow">PRACTICE</div><h2>Important Questions</h2></div><button onclick="startQuiz()">Mixed Quiz</button></div>
- <div id="quiz" class="quiz"><p class="muted">Start a mixed quiz to test Constitution, Static GK, Science, History and Railway GK.</p></div>
-</section>
-
-<section class="wrap" id="revision">
- <div class="eyebrow">QUICK REVISION</div><h2>Exam-day buckets</h2>
- <div class="revisionGrid">
-  <article><span>🇮🇳</span><h3>Constitution</h3><p>Articles • Rights • DPSP • Duties • Amendments • Bodies</p></article>
-  <article><span>🌍</span><h3>Static GK</h3><p>Capitals • Currencies • Rivers • Parks • Awards • Books</p></article>
-  <article><span>🔬</span><h3>General Science</h3><p>Physics • Chemistry • Biology • Everyday science</p></article>
-  <article><span>🚆</span><h3>Railway GK</h3><p>Zones • HQ • history • terminology • important facts</p></article>
+<section class="facts reveal" id="static">
+ <div class="chapterTop"><span>03 / STATIC GK</span><span>INDIA + WORLD</span></div>
+ <h2>India,<br><em>in facts.</em></h2>
+ <div class="factMosaic">
+  <article><span>01</span><b>FIRSTS</b><p>First in India. First in the world. The facts exams love.</p></article>
+  <article class="tall"><span>02</span><b>GEOGRAPHY</b><p>Rivers, dams, mountains, soils, parks, states and capitals.</p><div class="mapShape">INDIA</div></article>
+  <article><span>03</span><b>AWARDS</b><p>Bharat Ratna, Nobel, sports awards and honours.</p></article>
+  <article><span>04</span><b>BOOKS</b><p>Books, authors, languages and literary landmarks.</p></article>
+  <article><span>05</span><b>IMPORTANT DAYS</b><p>Dates and themes worth revising.</p></article>
  </div>
 </section>
+
+<section class="science reveal" id="science">
+ <div class="chapterTop"><span>04 / GENERAL SCIENCE</span><span>PHYSICS • CHEMISTRY • BIOLOGY</span></div>
+ <div class="scienceTitle"><h2>Look<br><em>closer.</em></h2><p>Everyday science, simplified into memorable visual ideas.</p></div>
+ <div class="scienceRows">
+  <div class="scienceRow"><b>PHYSICS</b><span>Motion / Force / Heat / Light / Sound / Electricity</span><i>↗</i></div>
+  <div class="scienceRow"><b>CHEMISTRY</b><span>Elements / Acids / Metals / Reactions / Everyday chemistry</span><i>↗</i></div>
+  <div class="scienceRow"><b>BIOLOGY</b><span>Human body / Vitamins / Diseases / Plants / Ecology</span><i>↗</i></div>
+ </div>
+</section>
+
+<section class="railway reveal">
+ <div class="chapterTop"><span>05 / RAILWAY GK</span><span>INDIAN RAILWAYS</span></div>
+ <div class="railTitle"><h2>Know the<br><em>network.</em></h2><div class="track"></div></div>
+ <div class="railFacts"><div><b>01</b><span>Railway history</span></div><div><b>02</b><span>Zones & headquarters</span></div><div><b>03</b><span>Terminology</span></div><div><b>04</b><span>Important projects</span></div></div>
+</section>
+
+<section class="question reveal" id="practice">
+ <div class="chapterTop"><span>06 / QUESTION</span><span>TEST YOUR MEMORY</span></div>
+ <div class="qwrap">
+   <div class="qnum">01</div>
+   <div><h2>Which Article deals with the Right to Constitutional Remedies?</h2>
+   <div class="options" id="options">
+    <button onclick="answer(this,0)">A <span>Article 14</span></button>
+    <button onclick="answer(this,1)">B <span>Article 19</span></button>
+    <button onclick="answer(this,2)">C <span>Article 21</span></button>
+    <button onclick="answer(this,3)">D <span>Article 32</span></button>
+   </div><p class="result" id="result"></p></div>
+ </div>
+</section>
+
+<section class="memory reveal">
+ <div class="memoryBig"><span>07 / MEMORY LAB</span><h2>Make it<br><em>stick.</em></h2></div>
+ <div class="flash" id="flash" onclick="nextFlash()"><small>CLICK TO FLIP</small><b id="flashTitle">42nd Amendment</b><p id="flashText">Often called the “Mini Constitution”.</p><span id="flashHint">→ tap for another</span></div>
+</section>
+
+<section class="cta reveal">
+ <div class="label">08 / EXAM MODE</div><h2>Ready when<br><em>you are.</em></h2><p>Build your revision habit one question at a time.</p><a href="#practice" class="ctaBtn">START PRACTICE <span>↗</span></a>
+</section>
 </main>
-<footer>NTPC GK Hub • Built for focused RRB NTPC General Awareness revision</footer>
+<footer><b>NTPC•GK</b><span>General Awareness, made memorable.</span><span>Built for local development + GitHub Pages.</span></footer>
 <script src="app.js"></script>
 </body></html>

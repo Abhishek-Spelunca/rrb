@@ -1,6 +1,10 @@
-# NTPC GK Hub
-GA-only RRB NTPC study website. Open index.html locally. Edit files in VS Code, then:
+# NTPC GK — V3
+Editorial, immersive RRB NTPC General Awareness landing/study experience.
+
+Local:
+Open index.html or use VS Code Live Server.
+
+Git:
 git add .
-git commit -m "Updated NTPC GK Hub"
+git commit -m "Redesign NTPC GK Hub"
 git push
-GitHub Pages will publish the changes.
