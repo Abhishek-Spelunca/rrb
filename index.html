@@ -1,70 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NTPC Prep — RRB NTPC</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NTPC GK Hub — RRB NTPC General Awareness</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="topbar">git push
-  <div class="brand">🚆 <span>NTPC Prep</span></div>
-  <nav><a href="#dashboard">Dashboard</a><a href="#practice">Practice</a><a href="#mock">Mock Test</a><a href="#notes">Notes</a></nav>
+<header class="top">
+  <div class="logo">🚆 <b>NTPC GK Hub</b></div>
+  <nav><a href="#home">Home</a><a href="#topics">Topics</a><a href="#practice">Practice</a><a href="#revision">Revision</a></nav>
+  <button class="mode" onclick="toggleMode()">☾</button>
 </header>
 
-<main>
+<main id="home">
 <section class="hero">
   <div>
-    <p class="eyebrow">RRB NTPC • CBT 1 / CBT 2</p>
-    <h1>Prepare smarter.<br><span>Practice daily.</span></h1>
-    <p class="sub">A simple free practice dashboard for Maths, Reasoning and General Awareness.</p>
-    <div class="actions"><button onclick="scrollToId('practice')">Start Practice</button><button class="ghost" onclick="scrollToId('mock')">Take Mock Test</button></div>
+    <div class="pill">RRB NTPC • GENERAL AWARENESS</div>
+    <h1>Learn GK.<br><em>Remember it.</em><br>Crack the question.</h1>
+    <p>Visual, exam-focused notes and questions for Constitution, Static GK, History, Geography, Economy, Science and Railway GK.</p>
+    <div class="heroBtns"><button onclick="go('topics')">Explore Topics →</button><button class="outline" onclick="startQuiz()">Start 10 Questions</button></div>
   </div>
-  <div class="hero-card">
-    <div class="train">🚆</div>
-    <h3>Today's Target</h3><strong id="target">20 questions</strong>
-    <div class="progress"><i id="targetBar"></i></div>
-    <small id="targetText">0 / 20 completed</small>
+  <div class="daily">
+    <div class="small">TODAY'S REVISION</div>
+    <div class="factIcon">🇮🇳</div>
+    <h3>Article 32</h3>
+    <p>Right to Constitutional Remedies</p>
+    <div class="tag">HIGH-YIELD</div>
   </div>
 </section>
 
-<section id="dashboard" class="section">
-<h2>Dashboard</h2>
-<div class="cards">
-  <div class="stat"><span>Questions</span><b id="qCount">0</b></div>
-  <div class="stat"><span>Accuracy</span><b id="accuracy">—</b></div>
-  <div class="stat"><span>Tests</span><b id="testCount">0</b></div>
-  <div class="stat"><span>Streak</span><b>🔥 1 day</b></div>
-</div>
+<section class="wrap stats">
+ <div><b id="qDone">0</b><span>Questions attempted</span></div>
+ <div><b id="accuracy">—</b><span>Accuracy</span></div>
+ <div><b>12</b><span>Core GK areas</span></div>
+ <div><b>🔥 1</b><span>Day streak</span></div>
 </section>
 
-<section id="practice" class="section">
-<h2>Practice by subject</h2>
-<div class="subjects">
- <button class="subject" onclick="startPractice('Maths')"><b>🔢 Maths</b><span>Arithmetic • Algebra • Geometry</span></button>
- <button class="subject" onclick="startPractice('Reasoning')"><b>🧠 Reasoning</b><span>Series • Coding • Logic</span></button>
- <button class="subject" onclick="startPractice('GA')"><b>🌍 General Awareness</b><span>Static GK • Science • Current Affairs</span></button>
-</div>
-<div id="quiz" class="quiz hidden"></div>
+<section class="wrap" id="topics">
+  <div class="sectionHead"><div><div class="eyebrow">LEARN</div><h2>High-Yield GK</h2></div><input id="search" oninput="filterTopics()" placeholder="Search topics..."></div>
+  <div class="topicGrid" id="topicGrid"></div>
 </section>
 
-<section id="mock" class="section alt">
-<h2>Quick Mock Test</h2>
-<p>Start a 10-question mixed practice test with a 10-minute timer.</p>
-<button onclick="startMock()">Start Mock</button>
-<div id="mockBox" class="quiz hidden"></div>
+<section class="feature wrap">
+ <div class="featureText"><div class="eyebrow">MEMORY ZONE</div><h2>Facts that stick.</h2><p>Study compact cards, memory hooks and exam-style questions instead of scrolling through walls of text.</p><button onclick="showMemory()">Show me a memory card</button></div>
+ <div id="memoryCard" class="memoryCard"><span>🧠 MEMORY CARD</span><h3>42nd Amendment</h3><p>Often called the <b>“Mini Constitution”</b>.</p><small>Tip: Think “42 = many major changes”.</small></div>
 </section>
 
-<section id="notes" class="section">
-<h2>Quick Revision</h2>
-<div class="notes-grid">
- <article><h3>Maths</h3><p>Keep percentage, ratio, profit & loss, time-work, time-distance and simplification formulas ready.</p></article>
- <article><h3>Reasoning</h3><p>Practice series, analogy, classification, coding-decoding, syllogism, directions and blood relations.</p></article>
- <article><h3>GA</h3><p>Revise Indian history, geography, polity, economy, general science, computers and current affairs.</p></article>
-</div>
+<section class="wrap" id="practice">
+ <div class="sectionHead"><div><div class="eyebrow">PRACTICE</div><h2>Important Questions</h2></div><button onclick="startQuiz()">Mixed Quiz</button></div>
+ <div id="quiz" class="quiz"><p class="muted">Start a mixed quiz to test Constitution, Static GK, Science, History and Railway GK.</p></div>
+</section>
+
+<section class="wrap" id="revision">
+ <div class="eyebrow">QUICK REVISION</div><h2>Exam-day buckets</h2>
+ <div class="revisionGrid">
+  <article><span>🇮🇳</span><h3>Constitution</h3><p>Articles • Rights • DPSP • Duties • Amendments • Bodies</p></article>
+  <article><span>🌍</span><h3>Static GK</h3><p>Capitals • Currencies • Rivers • Parks • Awards • Books</p></article>
+  <article><span>🔬</span><h3>General Science</h3><p>Physics • Chemistry • Biology • Everyday science</p></article>
+  <article><span>🚆</span><h3>Railway GK</h3><p>Zones • HQ • history • terminology • important facts</p></article>
+ </div>
 </section>
 </main>
-<footer>NTPC Prep • Free practice website • Your progress is stored in this browser.</footer>
+<footer>NTPC GK Hub • Built for focused RRB NTPC General Awareness revision</footer>
 <script src="app.js"></script>
-</body>
-</html>
+</body></html>
