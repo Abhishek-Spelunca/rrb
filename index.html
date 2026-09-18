@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NTPC Prep — RRB NTPC Practice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">🚆 <span>NTPC Prep</span></div>
+  <nav><a href="#dashboard">Dashboard</a><a href="#practice">Practice</a><a href="#mock">Mock Test</a><a href="#notes">Notes</a></nav>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <p class="eyebrow">RRB NTPC • CBT 1 / CBT 2</p>
+    <h1>Prepare smarter.<br><span>Practice daily.</span></h1>
+    <p class="sub">A simple free practice dashboard for Maths, Reasoning and General Awareness.</p>
+    <div class="actions"><button onclick="scrollToId('practice')">Start Practice</button><button class="ghost" onclick="scrollToId('mock')">Take Mock Test</button></div>
+  </div>
+  <div class="hero-card">
+    <div class="train">🚆</div>
+    <h3>Today's Target</h3><strong id="target">20 questions</strong>
+    <div class="progress"><i id="targetBar"></i></div>
+    <small id="targetText">0 / 20 completed</small>
+  </div>
+</section>
+
+<section id="dashboard" class="section">
+<h2>Dashboard</h2>
+<div class="cards">
+  <div class="stat"><span>Questions</span><b id="qCount">0</b></div>
+  <div class="stat"><span>Accuracy</span><b id="accuracy">—</b></div>
+  <div class="stat"><span>Tests</span><b id="testCount">0</b></div>
+  <div class="stat"><span>Streak</span><b>🔥 1 day</b></div>
+</div>
+</section>
+
+<section id="practice" class="section">
+<h2>Practice by subject</h2>
+<div class="subjects">
+ <button class="subject" onclick="startPractice('Maths')"><b>🔢 Maths</b><span>Arithmetic • Algebra • Geometry</span></button>
+ <button class="subject" onclick="startPractice('Reasoning')"><b>🧠 Reasoning</b><span>Series • Coding • Logic</span></button>
+ <button class="subject" onclick="startPractice('GA')"><b>🌍 General Awareness</b><span>Static GK • Science • Current Affairs</span></button>
+</div>
+<div id="quiz" class="quiz hidden"></div>
+</section>
+
+<section id="mock" class="section alt">
+<h2>Quick Mock Test</h2>
+<p>Start a 10-question mixed practice test with a 10-minute timer.</p>
+<button onclick="startMock()">Start Mock</button>
+<div id="mockBox" class="quiz hidden"></div>
+</section>
+
+<section id="notes" class="section">
+<h2>Quick Revision</h2>
+<div class="notes-grid">
+ <article><h3>Maths</h3><p>Keep percentage, ratio, profit & loss, time-work, time-distance and simplification formulas ready.</p></article>
+ <article><h3>Reasoning</h3><p>Practice series, analogy, classification, coding-decoding, syllogism, directions and blood relations.</p></article>
+ <article><h3>GA</h3><p>Revise Indian history, geography, polity, economy, general science, computers and current affairs.</p></article>
+</div>
+</section>
+</main>
+<footer>NTPC Prep • Free practice website • Your progress is stored in this browser.</footer>
+<script src="app.js"></script>
+</body>
+</html>
